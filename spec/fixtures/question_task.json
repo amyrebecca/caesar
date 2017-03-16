@@ -1,0 +1,132 @@
+{
+  "source": "panoptes",
+  "type": "classification",
+  "version": "1.0.0",
+  "timestamp": "2017-03-15T19:38:51Z",
+  "data": {
+    "id": "34086466",
+    "created_at": "2017-03-15T19:38:51.831Z",
+    "updated_at": "2017-03-15T19:38:51.919Z",
+    "user_ip": "1.2.3.4",
+    "workflow_version": "6.36",
+    "gold_standard": null,
+    "expert_classifier": null,
+    "annotations": [
+      {
+        "task": "T0",
+        "value": 0
+      }
+    ],
+    "metadata": {
+      "session": "e35ce1f247ea85df81eb69cb21a4dd254d6ed95f4e69a546513b55485944a684",
+      "viewport": {
+        "width": 1024,
+        "height": 672
+      },
+      "started_at": "2017-03-15T19:38:45.967Z",
+      "user_agent": "Mozilla/5.0 (iPad; CPU OS 10_2_1 like Mac OS X) AppleWebKit/602.4.6 (KHTML, like Gecko) Version/10.0 Mobile/14D27 Safari/602.1",
+      "utc_offset": "0",
+      "finished_at": "2017-03-15T19:38:51.474Z",
+      "live_project": true,
+      "user_language": "en",
+      "user_group_ids": [],
+      "subject_dimensions": [
+        {
+          "clientWidth": 382,
+          "clientHeight": 509,
+          "naturalWidth": 900,
+          "naturalHeight": 1200
+        }
+      ],
+      "workflow_version": "6.36"
+    },
+    "href": "/classifications/34086466",
+    "links": {
+      "project": "2501",
+      "user": "1",
+      "workflow": "3577",
+      "workflow_content": "3576",
+      "subjects": [
+        "6708469"
+      ]
+    }
+  },
+  "linked": {
+    "projects": [
+      {
+        "id": "2501",
+        "display_name": "Steller Watch",
+        "created_at": "2016-04-13T01:58:27.562Z",
+        "updated_at": "2017-03-15T14:04:41.747Z",
+        "href": "/projects/2501"
+      }
+    ],
+    "users": [
+      {
+        "id": "722511",
+        "login": "eefs",
+        "href": "/users/722511"
+      }
+    ],
+    "workflows": [
+      {
+        "id": "3577",
+        "display_name": "Presence or Absence",
+        "nero_config": {
+            "extractors": { "votes": {"type": "question", "task_key": "T0"} },
+            "reducers": { "votes": {"type": "count_choices"} },
+            "rules": [
+                {
+                    "if": ["gte", ["lookup", "votes.0"], ["const", 5]],
+                    "then": [
+                      {"action": "add_subject_to_set", "subject_set_id": 8752},
+                      {"action": "retire_subject"}
+                    ]
+                },
+                {
+                    "if": ["gte", ["lookup", "votes.1", 0], ["const", 5]],
+                    "then": [
+                      {"action": "retire_subject"}
+                    ]
+                }
+            ]
+        },
+        "retirement": {
+          "options": {
+            "count": 7
+          },
+          "criteria": "classification_count"
+        },
+        "created_at": "2017-02-28T02:05:22.470Z",
+        "updated_at": "2017-03-15T19:07:04.380Z",
+        "href": "/workflows/3577"
+      }
+    ],
+    "subjects": [
+      {
+        "id": "6708469",
+        "locations": [
+          {
+            "image/jpeg": "https://panoptes-uploads.zooniverse.org/production/subject_location/b1ef4c17-a35a-4d30-8180-a0d6c63fe8ef.jpeg"
+          }
+        ],
+        "metadata": {
+          "Date": "25-Jul-15",
+          "Site": "Attu Island: Cape Wrangell",
+          "Time": "11:40 AM (Timezone: Anchorage, AK USA)",
+          "#Task": "presence-absence",
+          "Owner": "NOAA Fisheries",
+          "#Frame": "frame1",
+          "#batch": "2-full launch",
+          "#ImageName": "20150725_114000_4.jpg",
+          "Permit_Info": "NMFS EPA/MMPA Permit #: 18528 & IUCN # A/NW2013-13245",
+          "Camera_Number": "4",
+          "#Image_Frame_Name": "20150725_114000_ACW4_frame1.JPG"
+        },
+        "created_at": "2017-03-09T05:42:36.038Z",
+        "updated_at": "2017-03-09T05:42:36.038Z",
+        "href": "/subjects/6708469"
+      }
+    ]
+  }
+}
