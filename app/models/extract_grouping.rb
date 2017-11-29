@@ -1,9 +1,9 @@
 class MissingGroupingField < StandardError
   attr_reader :extract_id, :field_name
-  def initialize(classification_id, field_name)
-    @classification_id = extract_id
+  def initialize(field_name, classification_id)
+    @classification_id = classification_id
     @field_name = field_name
-    super("Missing grouping field '#{field_name}' for classification ##{classification_id}")
+    super("Missing grouping field '#{field_name}' for classification #{classification_id}")
   end
 end
 
