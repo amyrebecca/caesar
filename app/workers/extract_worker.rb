@@ -38,7 +38,7 @@ class ExtractWorker
       # This specific sequence is harmless and should be ignored.
       true
     else
-      raise e
+      raise
     end
   end
 end

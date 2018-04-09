@@ -36,7 +36,7 @@ module Extractors
         raise StandardError.new "External extractor improperly configured: no URL"
       end
     rescue RestClient::InternalServerError
-      raise ExternalExtractorFailed
+      raise ExternalExtractorFailed, response&.body
     end
   end
 end
